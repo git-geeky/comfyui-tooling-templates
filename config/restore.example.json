@@ -1,0 +1,6 @@
+{
+  "paths": {
+    "comfyui_root": "D:/ComfyUI",
+    "workflow_templates": "D:/ComfyUI/user/default/workflows"
+  }
+}

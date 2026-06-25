@@ -11,6 +11,11 @@ This extract contains only portable pieces:
 It intentionally excludes local workflow registries, generated outputs, model
 inventories, review databases, machine paths, and private service configuration.
 
+Machine-specific values can be supplied through a private restore file outside
+git. Copy `config/restore.example.json` to a private path such as
+`%LOCALAPPDATA%\comfyui-tooling-templates\restore.local.json`, edit it for your
+machine, and set `COMFYUI_TOOLING_RESTORE_FILE` if you use another location.
+
 ## Quick Start
 
 ```powershell

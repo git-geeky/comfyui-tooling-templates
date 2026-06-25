@@ -1,6 +1,10 @@
 import json
+import os
+import tempfile
 import unittest
+from pathlib import Path
 
+from scripts import local_restore
 from scripts import qwen_structured_prompt as qsp
 
 
@@ -36,6 +40,23 @@ class StructuredPromptTests(unittest.TestCase):
         text = qsp.dumps_structured_prompt(payload)
 
         self.assertEqual(json.loads(text)["exact_text"], ["SAMPLE SOAP"])
+
+    def test_local_restore_file_is_optional_and_explicit(self):
+        self.assertEqual(local_restore.load_restore_config(env_var="MISSING_RESTORE_ENV_FOR_TEST"), {})
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "restore.local.json"
+            path.write_text(json.dumps({"paths": {"comfyui_root": "D:/ComfyUI"}}), encoding="utf-8")
+            old = os.environ.get("COMFYUI_TOOLING_RESTORE_FILE")
+            os.environ["COMFYUI_TOOLING_RESTORE_FILE"] = str(path)
+            try:
+                payload = local_restore.load_restore_config()
+            finally:
+                if old is None:
+                    os.environ.pop("COMFYUI_TOOLING_RESTORE_FILE", None)
+                else:
+                    os.environ["COMFYUI_TOOLING_RESTORE_FILE"] = old
+
+        self.assertEqual(payload["paths"]["comfyui_root"], "D:/ComfyUI")
 
 
 if __name__ == "__main__":
