@@ -28,7 +28,7 @@ REQUIRED_KEYS = {
 LIST_KEYS = {"required_elements", "forbidden_elements", "exact_text", "uncertain_assumptions", "warnings"}
 ALLOWED_ASPECT_HINTS = {"square", "portrait", "landscape", "wide", "unknown"}
 ALLOWED_STYLE_DOMAINS = {"anime", "photoreal", "illustration", "mixed", "unknown"}
-ALLOWED_ERAS = {"historical", "modern", "timeless", "unknown"}
+ALLOWED_ERAS = {"edo", "historical", "meiji", "modern", "timeless", "unknown"}
 ALLOWED_SAFETY_SCOPES = {"sfw", "adult-nonsexual-nsfw", "nsfw", "unknown"}
 
 

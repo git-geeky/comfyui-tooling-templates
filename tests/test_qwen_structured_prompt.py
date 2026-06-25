@@ -24,6 +24,12 @@ class StructuredPromptTests(unittest.TestCase):
         self.assertEqual(payload["aspect_hint"], "landscape")
         self.assertEqual(payload["required_elements"], ["timber"])
 
+    def test_historical_era_aliases_remain_valid(self):
+        for era in ["historical", "edo", "meiji"]:
+            payload = qsp.structured_prompt_from_text("interior study", era=era)
+
+            self.assertEqual(payload["era"], era)
+
     def test_template_registry_loads_default_template(self):
         payload = qsp.load_template("architecture-wood-joinery")
 
