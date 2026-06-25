@@ -1,0 +1,29 @@
+{
+  "workflows": [
+    {
+      "workflow_id": "text-to-image-default",
+      "display_name": "Text to image default",
+      "category": "text-to-image",
+      "template_path": "templates/text-to-image-default.workflow.json",
+      "required_models": [
+        "base-diffusion-model"
+      ],
+      "inputs": {
+        "prompt": "string",
+        "seed": "integer"
+      }
+    },
+    {
+      "workflow_id": "upscale-default",
+      "display_name": "Upscale default",
+      "category": "upscale",
+      "template_path": "templates/upscale-default.workflow.json",
+      "required_models": [
+        "upscale-model"
+      ],
+      "inputs": {
+        "image": "path"
+      }
+    }
+  ]
+}
