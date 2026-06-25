@@ -42,7 +42,17 @@ class StructuredPromptTests(unittest.TestCase):
         self.assertEqual(json.loads(text)["exact_text"], ["SAMPLE SOAP"])
 
     def test_local_restore_file_is_optional_and_explicit(self):
-        self.assertEqual(local_restore.load_restore_config(env_var="MISSING_RESTORE_ENV_FOR_TEST"), {})
+        old_local_app_data = os.environ.get("LOCALAPPDATA")
+        with tempfile.TemporaryDirectory() as tmp:
+            os.environ["LOCALAPPDATA"] = tmp
+            try:
+                self.assertEqual(local_restore.load_restore_config(env_var="MISSING_RESTORE_ENV_FOR_TEST"), {})
+            finally:
+                if old_local_app_data is None:
+                    os.environ.pop("LOCALAPPDATA", None)
+                else:
+                    os.environ["LOCALAPPDATA"] = old_local_app_data
+
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "restore.local.json"
             path.write_text(json.dumps({"paths": {"comfyui_root": "D:/ComfyUI"}}), encoding="utf-8")

@@ -1,6 +1,8 @@
 {
   "paths": {
     "comfyui_root": "D:/ComfyUI",
-    "workflow_templates": "D:/ComfyUI/user/default/workflows"
+    "workflow_templates": "D:/ComfyUI/user/default/workflows",
+    "preference_lab_db": "D:/ComfyUI/output/preference-lab.sqlite",
+    "benchmark_records": "D:/ComfyUI/output/benchmark-runs.json"
   }
 }

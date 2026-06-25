@@ -1,0 +1,22 @@
+{
+  "runs": [
+    {
+      "candidate_id": "candidate-a",
+      "prompt_id": "product-poster",
+      "scores": {
+        "human_preference": 0.82,
+        "prompt_adherence": 0.76,
+        "technical_quality": 0.88
+      }
+    },
+    {
+      "candidate_id": "candidate-b",
+      "prompt_id": "product-poster",
+      "scores": {
+        "human_preference": 0.66,
+        "prompt_adherence": 0.91,
+        "technical_quality": 0.81
+      }
+    }
+  ]
+}
