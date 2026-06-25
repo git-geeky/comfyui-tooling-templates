@@ -1,0 +1,81 @@
+{
+  "version": "qwen-structured-template-registry-v1",
+  "templates": {
+    "architecture-wood-joinery": {
+      "prompt_hardener_version": "qwen-structured-v1",
+      "positive_prompt": "Photoreal wooden architecture study, timber joinery, clay walls, stone path, paper lanterns, cypress beams, historically grounded materials, no modern signage or power lines, overcast natural light, documentary architectural photography.",
+      "negative_prompt": "",
+      "aspect_hint": "landscape",
+      "style_domain": "photoreal",
+      "era": "historical",
+      "safety_scope": "sfw",
+      "required_elements": [
+        "wooden architecture",
+        "visible timber joinery",
+        "historically grounded materials"
+      ],
+      "forbidden_elements": [
+        "modern signage",
+        "power lines",
+        "concrete high-rises"
+      ],
+      "exact_text": [],
+      "uncertain_assumptions": [],
+      "warnings": [
+        "Era correctness is a primary score signal for this template."
+      ]
+    },
+    "food-still-life": {
+      "prompt_hardener_version": "qwen-structured-v1",
+      "positive_prompt": "Photoreal vegetarian meal tray in a quiet dining room, seasonal vegetables, tofu, soup, pickles, rice, ceramic tableware, restrained presentation, natural side light, documentary food photography.",
+      "negative_prompt": "",
+      "aspect_hint": "square",
+      "style_domain": "photoreal",
+      "era": "modern",
+      "safety_scope": "sfw",
+      "required_elements": [
+        "vegetarian meal",
+        "tofu",
+        "seasonal vegetables",
+        "rice",
+        "soup"
+      ],
+      "forbidden_elements": [
+        "fish",
+        "meat",
+        "seafood"
+      ],
+      "exact_text": [],
+      "uncertain_assumptions": [],
+      "warnings": [
+        "Dietary adherence is a primary score signal for this template."
+      ]
+    },
+    "product-text-poster": {
+      "prompt_hardener_version": "qwen-structured-v1",
+      "positive_prompt": "Photoreal studio product poster for a small soap box on a cedar surface, clean product typography, softbox lighting, ceramic dish, restrained modern packaging design, exact readable front-label text SAMPLE SOAP.",
+      "negative_prompt": "",
+      "aspect_hint": "portrait",
+      "style_domain": "photoreal",
+      "era": "modern",
+      "safety_scope": "sfw",
+      "required_elements": [
+        "soap box",
+        "readable front-label text",
+        "clean product typography"
+      ],
+      "forbidden_elements": [
+        "gibberish brand text",
+        "watermark",
+        "extra logo clutter"
+      ],
+      "exact_text": [
+        "SAMPLE SOAP"
+      ],
+      "uncertain_assumptions": [],
+      "warnings": [
+        "Text fidelity is a primary score signal for this template."
+      ]
+    }
+  }
+}
